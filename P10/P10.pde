@@ -1,4 +1,4 @@
-PShader catShader;
+PShader catShader, colorShader;
 PImage catTexture;
 
 float offset = -10;
@@ -10,6 +10,7 @@ void setup() {
   
   catTexture = loadImage("data/dotaLogo1.png");
   catShader = loadShader("data/TextFrag.glsl", "data/TextVert.glsl");
+  colorShader = loadShader("data/BasicFrag.glsl", "data/BasicVert.glsl");
 }
 
 float time = 0.0f;
@@ -29,7 +30,7 @@ void draw() {
   // Provided so that you can see "holes"
   // where the sphere is transparent, and have an
   // example of how to use textures with shaders
-  shader(catShader);
+  shader(catShader, PROCESSING_LIGHT_SHADER);
   noStroke();
   fill(#00FFAA);
   textureMode(NORMAL);
@@ -42,9 +43,9 @@ void draw() {
   endShape();
   
   // Sphere
-  resetShader(); // replace resetShader() with a call to use your own shader
+  //resetShader(); // replace resetShader() with a call to use your own shader
  // fill(#FFFFFF);
- // stroke(#FF0000);
+  //stroke(#FF0000);
   sphereDetail(32);
   sphere(120);
 }

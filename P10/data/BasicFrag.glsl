@@ -34,6 +34,16 @@ void main() {
   color.r *= 0.5; // make it kind of cyan by decreasing red,
                   // just as an example. feel free to change
                   // this.
+									
+	if (intensity > 0.95){
+		color = vec4(vec3(1.0), 1.0);
+		} else if (intensity > 0.65){
+			color = vec4(vec3(0.6), 1.0);
+		} else if (intensity > 0.35){
+			color = vec4(vec3(0.3), 1.0);
+		} else {
+			color = vec4(vec3(0.15), 1.0);
+		}									
   
   // The "return value" of a fragment shader
   gl_FragColor = color * vertColor;

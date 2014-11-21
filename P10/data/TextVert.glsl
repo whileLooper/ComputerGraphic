@@ -26,15 +26,15 @@ varying vec4 vertTexCoord;
 
 void main() {
   vertColor = color;
-  
+
   vertNormal = normalize(normalMatrix * normal);
-  
+
   // We have to create a copy of vertex because modifying
   // attribute variables is against the rules
   vec4 vert = vertex;
-  
+
   // think of gl_Position as a return value for vertex shaders
-  gl_Position = transform * vert; 
+  gl_Position = transform * vert;
   vertLightDir = -lightNormal;
-  vertTexCoord = texMatrix * vec4(texCoord, 1.0, 1.0);
+  //vertTexCoord = texMatrix * vec4(texCoord, 1.0, 1.0);
 }
