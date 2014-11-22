@@ -30,7 +30,7 @@ void draw() {
   // Provided so that you can see "holes"
   // where the sphere is transparent, and have an
   // example of how to use textures with shaders
-  shader(catShader, PROCESSING_LIGHT_SHADER);
+  shader(colorShader);
   noStroke();
   fill(#00FFAA);
   textureMode(NORMAL);

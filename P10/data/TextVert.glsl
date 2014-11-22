@@ -36,5 +36,5 @@ void main() {
   // think of gl_Position as a return value for vertex shaders
   gl_Position = transform * vert;
   vertLightDir = -lightNormal;
-  //vertTexCoord = texMatrix * vec4(texCoord, 1.0, 1.0);
+  vertTexCoord = texMatrix * vec4(texCoord, 1.0, 1.0);
 }

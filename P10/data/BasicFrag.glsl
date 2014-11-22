@@ -30,8 +30,8 @@ void main() {
   
   
   color.rgb = vec3(intensity);
-  color.a = 1.0;
-  color.r *= 0.5; // make it kind of cyan by decreasing red,
+  // color.a = 1.0;
+ //  color.r *= 0.5; // make it kind of cyan by decreasing red,
                   // just as an example. feel free to change
                   // this.
 									
