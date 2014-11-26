@@ -7,6 +7,8 @@ uniform mat4 transform;
 uniform mat3 normalMatrix;
 uniform vec3 lightNormal;
 
+uniform float time;
+uniform float mouseY;
 // Space for uniform variables ( you can make your own! =D )
 // Pass in things from Processing with shader.set("variable_name", value);
 // Then declare them here with: uniform float variable_name;
@@ -24,17 +26,16 @@ varying vec3 vertLightDir;
 varying vec4 vertPos;
 
 void main() {
-  vertColor = color;
-  
-  vertNormal = normalize(normalMatrix * normal);
-  
-  // We have to create a copy of vertex because modifying
-  // attribute variables is against the rules
-  vec4 vert = vertex;  
-  
-  // think of gl_Position as a return value for vertex shaders
-  gl_Position = transform * vert; 
-  vertLightDir = -lightNormal;
-  vertPos = vert;
+    vertColor = color;
     
+    vertNormal = normalize(normalMatrix * normal);
+    
+    // We have to create a copy of vertex because modifying
+    // attribute variables is against the rules
+    vec4 vert = vertex;
+    vert.y *= sin(vert.x/(mouseY) + time);
+    // think of gl_Position as a return value for vertex shaders
+    gl_Position = transform * vert;
+    vertLightDir = -lightNormal;
+    vertPos = vert;
 }

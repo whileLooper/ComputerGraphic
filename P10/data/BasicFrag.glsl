@@ -37,13 +37,15 @@ void main() {
 									
 	if (intensity > 0.95){
 		color = vec4(vec3(1.0), 1.0);
-		} else if (intensity > 0.65){
-			color = vec4(vec3(0.6), 1.0);
-		} else if (intensity > 0.35){
-			color = vec4(vec3(0.3), 1.0);
-		} else {
-			color = vec4(vec3(0.15), 1.0);
-		}									
+		} else if (intensity > 0.85){
+			color = vec4(vec3(0.75), 1.0);
+		} else if (intensity > 0.55){
+			color = vec4(vec3(0.55), 1.0);
+		} else if (intensity > 0.25){
+			color = vec4(vec3(0.25), 1.0);
+		}	else {
+			color = vec4(vec3(0.05), 1.0);
+		}
   
   // The "return value" of a fragment shader
   gl_FragColor = color * vertColor;
